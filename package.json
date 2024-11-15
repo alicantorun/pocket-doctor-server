@@ -1,0 +1,36 @@
+{
+    "name": "role-based-user-api",
+    "version": "1.0.0",
+    "description": "Multi Tenant Role Based User API",
+    "main": "index.js",
+    "scripts": {
+        "dev": "bun --watch src/main.ts",
+        "migrate:generate": "bunx drizzle-kit generate:pg",
+        "migrate:push": "bun src/utils/migrate.ts",
+        "migrate": "bun run migrate:generate && bun run migrate:push"
+    },
+    "author": "Morka Joshua",
+    "license": "ISC",
+    "dependencies": {
+        "argon2": "^0.31.1",
+        "drizzle-orm": "^0.28.6",
+        "fastify": "^4.23.2",
+        "fastify-guard": "^2.0.0",
+        "fastify-zod": "^1.4.0",
+        "jsonwebtoken": "^9.0.2",
+        "pg": "^8.11.3",
+        "pino": "^8.15.1",
+        "pino-pretty": "^10.2.0",
+        "zennv": "^0.1.1",
+        "zenv": "^1.0.2",
+        "zod": "^3.22.2"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^9.0.3",
+        "@types/pg": "^8.10.2",
+        "drizzle-kit": "^0.19.13",
+        "tsx": "^3.12.10",
+        "typescript": "^5.2.2",
+        "zod-to-json-schema": "^3.21.4"
+    }
+}
